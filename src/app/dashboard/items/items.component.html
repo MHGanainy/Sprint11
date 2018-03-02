@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <p>
+      <p>name:<input type ="text" id="num2"></p>
+      <p>price:<input type ="number" id="num3"></p>
+    <p>
+      <button (click)="createProducts();" class="form-control btn btn-success">Create a New Product</button>
+    </p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12">
+    <div class="list-group">
+        <nb-card *ngFor = "let item of items; let i = index" style="padding:10px">
+          <div>      
+          <div class="float-left">
+                  <h4> {{item.name}}</h4>
+                  <p> {{item.price}} </p>
+                  <p> {{item.Created}} </p>
+                  <p> {{item.Updated}} </p>
+                  <p> {{item.Seller_Name}} </p>
+                </div>
+                <div class="float-right"> 
+                  <button type="button" (click)="deleteProducts(item._id)" class="form-control btn btn-success">Delete</button>
+                <button type="button" (click)="editProducts(item)" class="form-control btn btn-success">Edit</button>
+                  </div>
+                </div>
+          </nb-card>
+  </div>
+</div>
+</div>
